@@ -1,0 +1,748 @@
+
+
+<!DOCTYPE html>
+<html lang="pl">
+    
+    <!-- Nagłówek-->
+    <head>
+        
+        <title>Play The Bible</title>
+        <meta name="description" content="Strona umoliwia wyświetlanie treści
+        wersetów biblijnych bez numeracji oraz bez znaków, których się nie czyta.">
+        <meta name="keywords" content="Bible, Biblia, Biblijny, Odtwarzacz Biblijny, Odtwarzacz Biblijny">
+        <meta name="robots" content="index, follow">
+        <meta name="author" content="Piotr Zaborski">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="favicon.ico">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/rules.css') }}">
+        <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+        <link rel="manifest" href="{{ url_for('static', filename='site.webmanifest') }}">
+
+        <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <meta name="apple-mobile-web-app-title" content="Play The Bible" />
+        <link rel="manifest" href="/site.webmanifest" />
+
+    </head>
+
+    <body style="background-color: #dcdcdc">
+   
+
+
+    <br><br><br><br><br><br><br><br>
+     
+    <i>
+        <h1 title="Play The Bible" class="center">Odtwarzacz Biblijny</h1><br>
+    </i>
+    
+    <!--Informacja dla użytkownika, jak działa strona-->
+    <p class="center">
+        Strona umożliwia wyświetlanie treści wersetów biblijnych bez numeracji oraz bez znaków, których się nie czyta.
+        <br>Ułatwia to korzystanie z funkcji <b>automatycznego czytania treści </b>wersetów biblijnych.
+    </p>
+
+    <!--Etykiety do podstrony -->
+    <table style="margin: 0 auto;">
+        <tr>
+            <th><a href="{{ url_for('schemat') }}#lista_tlumaczen">Lista tłumaczeń Biblii</a></th>
+            <th>&nbsp;&nbsp;&nbsp;</th>
+            <th><a href="{{ url_for('schemat') }}#lista_ksiegi">Lista ksiąg Biblii</a></th>
+        </tr>
+    </table>
+
+
+    <!-- Lista dostępnych tłumaczeń Biblii: -->
+    <p class="center">
+        <select id="translation">
+        <option value="bg">Biblia Gdańska</option>
+        <option value="bw">Biblia Warszawska</option>
+        <option value="bt">Biblia Tysiąclecia</option>
+        <option value="br">Biblia Warszawsko-Praska</option>
+        <option value="esp">Edycja Świętego Pawła</option>
+        <option value="ng">Nowa Biblia Gdańska</option>
+        <option value="ug">Uwspółcześniona Biblia Gdańska</option>
+        <option value="bb">Biblia Brzeska</option>
+        <option value="bp">Biblia Poznańska</option>
+        <option value="jw">Biblia Jakuba Wujka</option>
+        <option value="bm">Biblia Mesjańska</option>
+        <option value="ns">Biblia Nowego Świata</option>
+        <option value="bl">Biblia Lubelska</option>
+        <option value="sz">Słowo Życia</option>
+        <option value="eib">Przekład Dosłowny</option>
+        <option value="tnp">Biblia Toruńska</option>
+        </select>
+        <label for="translation"><b><i> Tłumaczenie biblijne</i></b></label>
+    </p>
+
+
+
+    <table style="margin: 0 auto;">
+    <td>
+    <td>
+    <!-- Lista dostępnych ksiąg: -->
+    <p class="center">
+        <select id="book">
+        <option color="blue" value="Gen">&ast;&ast;Stary Testament&ast;&ast;</option>  
+        <option value="Gen">Ks. Rodzaju </option>
+        <option value="Ex">Ks. Wyjścia</option>
+        <option value="Kapl">Ks. Kapłańska</option>
+        <option value="Num">Ks. Liczb</option>
+        <option value="Dt">Ks. Powtórzonego Prawa</option>
+        <option value="Joz">Ks. Jozuego</option>
+        <option value="Sdz">Ks. Sędziów</option>
+        <option value="Rut">Ks. Rut</option>
+        <option value="1Sm">1 Ks. Samuela</option>
+        <option value="2Sm">2 Ks. Samuela</option>
+        <option value="1Krl">1 Ks. Królewska</option>
+        <option value="2Krl">2 Ks. Królewska</option>
+        <option value="1Krn">1 Ks. Kronik</option>
+        <option value="2Krn">2 Ks. Kronik</option>
+        <option value="Ezd">Ks. Ezdrasza</option>
+        <option value="Neh">Ks. Nehemiasza</option>
+        <option value="Est">Ks. Estery</option>
+        <option value="Job">Ks. Hioba</option>
+        <option value="Ps">Ks. Psalmów</option>
+        <option value="Prz">Ks. Przysłów</option>
+        <option value="Koh">Ks. Koheleta</option>
+        <option value="PNP">Pieśń nad pieśniami</option>
+        <option value="Iz">Ks. Izajasza</option>
+        <option value="Jer">Ks. Jeremiasza</option>
+        <option value="Lm">Lamentacje Jeremiasza</option>
+        <option value="Ez">Ks. Ezechiela</option>
+        <option value="Dn">Ks. Daniela</option>
+        <option value="Oz">Ks. Ozeasza</option>
+        <option value="Jl">Ks. Joela</option>
+        <option value="Am">Ks. Amosa</option>
+        <option value="Ab">Ks. Abdiasza</option>
+        <option value="Jon">Ks. Jonasza</option>
+        <option value="Mi">Ks. Micheasza</option>
+        <option value="Na">Ks. Nahuma</option>
+        <option value="Ha">Ks. Habakuka</option>
+        <option value="So">Ks. Sofoniasza</option>
+        <option value="Ag">Ks. Aggeusza</option>
+        <option value="Za">Ks. Zachariasza</option>
+        <option value="Mal">Ks. Malachiasza</option>
+
+        <option color="blue" value="Mt">&ast;&ast;Nowy Testament&ast;&ast;</option>
+        <option value="Mt">Ew. od Mateusza</option>
+        <option value="Mk">Ew. od Marka</option>
+        <option value="Lk">Ew. od Łukasza</option>
+        <option value="Jan">Ew. od Jana</option>
+        <option value="Dz">Dzieje Apostolskie</option>
+        <option value="Rz">List do Rzymian</option>
+        <option value="1Kor">1 List do Koryntian</option>
+        <option value="2Kor">2 List do Koryntian</option>
+        <option value="Ga">List do Galatów</option>
+        <option value="Ef">List do Efezjan</option>
+        <option value="Flp">List do Filipian</option>
+        <option value="Kol">List do Kolosan</option>
+        <option value="1Tes">1 List do Tesaloniczan</option>
+        <option value="2Tes">2 List do Tesaloniczan</option>
+        <option value="1Tm">1 List do Tymoteusza</option>
+        <option value="2Tm">2 List do Tymoteusza</option>
+        <option value="Tt">List do Tytusa</option>
+        <option value="Flm">List do Filemona</option>
+        <option value="Hbr">List do Hebrajczyków</option>
+        <option value="Jk">List Jakuba</option>
+        <option value="1P">1 List Piotra</option>
+        <option value="2P">2 List Piotra</option>
+        <option value="1J">1 List Jana</option>
+        <option value="2J">2 List Jana</option>
+        <option value="3J">3 List Jana</option>
+        <option value="Jud">List Judy</option>
+        <option value="Ap">Apokalipsa (Objawienie)</option>
+        </select>
+        <label for="book"><b><i> Księgi </i></b></label>
+
+    </p>
+    </td>
+    
+    
+
+    <td>
+    <!-- Lista dostępnych nr rozdzaiłów: -->
+    <p class="center">
+        <select id="chapter">
+        <option value="1"> 1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+        <option value="19">19</option>
+        <option value="20">20</option>
+        <option value="21">21</option>
+        <option value="22">22</option>
+        <option value="23">23</option>
+        <option value="24">24</option>
+        <option value="25">25</option>
+        <option value="26">26</option>
+        <option value="27">27</option>
+        <option value="28">28</option>
+        <option value="29">29</option>
+        <option value="30">30</option>
+        <option value="31">31</option>
+        <option value="32">32</option>
+        <option value="33">33</option>
+        <option value="34">34</option>
+        <option value="35">35</option>
+        <option value="36">36</option>
+        <option value="37">37</option>
+        <option value="38">38</option>
+        <option value="39">39</option>
+        <option value="40">40</option>
+        <option value="41">41</option>
+        <option value="42">42</option>
+        <option value="43">43</option>
+        <option value="44">44</option>
+        <option value="45">45</option>
+        <option value="46">46</option>
+        <option value="47">47</option>
+        <option value="48">48</option>
+        <option value="49">49</option>
+        <option value="50">50</option>
+        <option value="51">51</option>
+        <option value="52">52</option>
+        <option value="53">53</option>
+        <option value="54">54</option>
+        <option value="55">55</option>
+        <option value="56">56</option>
+        <option value="57">57</option>
+        <option value="58">58</option>
+        <option value="59">59</option>
+        <option value="60">60</option>
+        <option value="61">61</option>
+        <option value="62">62</option>
+        <option value="63">63</option>
+        <option value="64">64</option>
+        <option value="65">65</option>
+        <option value="66">66</option>
+        <option value="67">67</option>
+        <option value="68">68</option>
+        <option value="69">69</option>
+        <option value="70">70</option>
+        <option value="71">71</option>
+        <option value="72">72</option>
+        <option value="73">73</option>
+        <option value="74">74</option>
+        <option value="75">75</option>
+        <option value="76">76</option>
+        <option value="77">77</option>
+        <option value="78">78</option>
+        <option value="79">79</option>
+        <option value="80">80</option>
+        <option value="81">81</option>
+        <option value="82">82</option>
+        <option value="83">83</option>
+        <option value="84">84</option>
+        <option value="85">85</option>
+        <option value="86">86</option>
+        <option value="87">87</option>
+        <option value="88">88</option>
+        <option value="89">89</option>
+        <option value="90">90</option>
+        <option value="91">91</option>
+        <option value="92">92</option>
+        <option value="93">93</option>
+        <option value="94">94</option>
+        <option value="95">95</option>
+        <option value="96">96</option>
+        <option value="97">97</option>
+        <option value="98">98</option>
+        <option value="99">99</option>
+        <option value="100">100</option>
+        <option value="101">101</option>
+        <option value="102">102</option>
+        <option value="103">103</option>
+        <option value="104">104</option>
+        <option value="105">105</option>
+        <option value="106">106</option>
+        <option value="107">107</option>
+        <option value="108">108</option>
+        <option value="109">109</option>
+        <option value="110">110</option>
+        <option value="111">111</option>
+        <option value="112">112</option>
+        <option value="113">113</option>
+        <option value="114">114</option>
+        <option value="115">115</option>
+        <option value="116">116</option>
+        <option value="117">117</option>
+        <option value="118">118</option>
+        <option value="119">119</option>
+        <option value="120">120</option>
+        <option value="121">121</option>
+        <option value="122">122</option>
+        <option value="123">123</option>
+        <option value="124">124</option>
+        <option value="125">125</option>
+        <option value="126">126</option>
+        <option value="127">127</option>
+        <option value="128">128</option>
+        <option value="129">129</option>
+        <option value="130">130</option>
+        <option value="131">131</option>
+        <option value="132">132</option>
+        <option value="133">133</option>
+        <option value="134">134</option>
+        <option value="135">135</option>
+        <option value="136">136</option>
+        <option value="137">137</option>
+        <option value="138">138</option>
+        <option value="139">139</option>
+        <option value="140">140</option>
+        <option value="141">141</option>
+        <option value="142">142</option>
+        <option value="143">143</option>
+        <option value="144">144</option>
+        <option value="145">145</option>
+        <option value="146">146</option>
+        <option value="147">147</option>
+        <option value="148">148</option>
+        <option value="149">149</option>
+        <option value="150">150</option>
+        </select>
+        <label for="rozdzial"><b><i> Rozdzaił </i></b></label>
+
+    </p>
+    </td>
+
+    <td style="width: 20px;"></td>
+    
+    <!-- Lista dostępnych nr wersetów od lub jedynie ten werset: -->
+    <td>
+    <p class="center">
+        <select id="verse">
+        <option value="0">&mdash;</option>  
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+        <option value="19">19</option>
+        <option value="20">20</option>
+        <option value="21">21</option>
+        <option value="22">22</option>
+        <option value="23">23</option>
+        <option value="24">24</option>
+        <option value="25">25</option>
+        <option value="26">26</option>
+        <option value="27">27</option>
+        <option value="28">28</option>
+        <option value="29">29</option>
+        <option value="30">30</option>
+        <option value="31">31</option>
+        <option value="32">32</option>
+        <option value="33">33</option>
+        <option value="34">34</option>
+        <option value="35">35</option>
+        <option value="36">36</option>
+        <option value="37">37</option>
+        <option value="38">38</option>
+        <option value="39">39</option>
+        <option value="40">40</option>
+        <option value="41">41</option>
+        <option value="42">42</option>
+        <option value="43">43</option>
+        <option value="44">44</option>
+        <option value="45">45</option>
+        <option value="46">46</option>
+        <option value="47">47</option>
+        <option value="48">48</option>
+        <option value="49">49</option>
+        <option value="50">50</option>
+        <option value="51">51</option>
+        <option value="52">52</option>
+        <option value="53">53</option>
+        <option value="54">54</option>
+        <option value="55">55</option>
+        <option value="56">56</option>
+        <option value="57">57</option>
+        <option value="58">58</option>
+        <option value="59">59</option>
+        <option value="60">60</option>
+        <option value="61">61</option>
+        <option value="62">62</option>
+        <option value="63">63</option>
+        <option value="64">64</option>
+        <option value="65">65</option>
+        <option value="66">66</option>
+        <option value="67">67</option>
+        <option value="68">68</option>
+        <option value="69">69</option>
+        <option value="70">70</option>
+        <option value="71">71</option>
+        <option value="72">72</option>
+        <option value="73">73</option>
+        <option value="74">74</option>
+        <option value="75">75</option>
+        <option value="76">76</option>
+        <option value="77">77</option>
+        <option value="78">78</option>
+        <option value="79">79</option>
+        <option value="80">80</option>
+        <option value="81">81</option>
+        <option value="82">82</option>
+        <option value="83">83</option>
+        <option value="84">84</option>
+        <option value="85">85</option>
+        <option value="86">86</option>
+        <option value="87">87</option>
+        <option value="88">88</option>
+        <option value="89">89</option>
+        <option value="90">90</option>
+        <option value="91">91</option>
+        <option value="92">92</option>
+        <option value="93">93</option>
+        <option value="94">94</option>
+        <option value="95">95</option>
+        <option value="96">96</option>
+        <option value="97">97</option>
+        <option value="98">98</option>
+        <option value="99">99</option>
+        <option value="100">100</option>
+        <option value="101">101</option>
+        <option value="102">102</option>
+        <option value="103">103</option>
+        <option value="104">104</option>
+        <option value="105">105</option>
+        <option value="106">106</option>
+        <option value="107">107</option>
+        <option value="108">108</option>
+        <option value="109">109</option>
+        <option value="110">110</option>
+        <option value="111">111</option>
+        <option value="112">112</option>
+        <option value="113">113</option>
+        <option value="114">114</option>
+        <option value="115">115</option>
+        <option value="116">116</option>
+        <option value="117">117</option>
+        <option value="118">118</option>
+        <option value="119">119</option>
+        <option value="120">120</option>
+        <option value="121">121</option>
+        <option value="122">122</option>
+        <option value="123">123</option>
+        <option value="124">124</option>
+        <option value="125">125</option>
+        <option value="126">126</option>
+        <option value="127">127</option>
+        <option value="128">128</option>
+        <option value="129">129</option>
+        <option value="130">130</option>
+        <option value="131">131</option>
+        <option value="132">132</option>
+        <option value="133">133</option>
+        <option value="134">134</option>
+        <option value="135">135</option>
+        <option value="136">136</option>
+        <option value="137">137</option>
+        <option value="138">138</option>
+        <option value="139">139</option>
+        <option value="140">140</option>
+        <option value="141">141</option>
+        <option value="142">142</option>
+        <option value="143">143</option>
+        <option value="144">144</option>
+        <option value="145">145</option>
+        <option value="146">146</option>
+        <option value="147">147</option>
+        <option value="148">148</option>
+        <option value="149">149</option>
+        <option value="150">150</option>
+        <option value="151">151</option>
+        <option value="152">152</option>
+        <option value="153">153</option>
+        <option value="154">154</option>
+        <option value="155">155</option>
+        <option value="156">156</option>
+        <option value="157">157</option>
+        <option value="158">158</option>
+        <option value="159">159</option>
+        <option value="160">160</option>
+        <option value="161">161</option>
+        <option value="162">162</option>
+        <option value="163">163</option>
+        <option value="164">164</option>
+        <option value="165">165</option>
+        <option value="166">166</option>
+        <option value="167">167</option>
+        <option value="168">168</option>
+        <option value="169">169</option>
+        <option value="170">170</option>
+        <option value="171">171</option>
+        <option value="172">172</option>
+        <option value="173">173</option>
+        <option value="174">174</option>
+        <option value="175">175</option>
+        <option value="176">176</option>
+        </select>
+        <label for="Od_Do"><b><i> :od&nbsp;do:&nbsp;</i></b></label>
+        
+    </p>
+    </td>
+
+
+
+    <td>
+    <!-- Lista dostępnych nr wersetów do: -->
+     <p class="center">
+        <select id="verse2">
+        <option value="0">&mdash;</option>  
+        <option value="0">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+        <option value="19">19</option>
+        <option value="20">20</option>
+        <option value="21">21</option>
+        <option value="22">22</option>
+        <option value="23">23</option>
+        <option value="24">24</option>
+        <option value="25">25</option>
+        <option value="26">26</option>
+        <option value="27">27</option>
+        <option value="28">28</option>
+        <option value="29">29</option>
+        <option value="30">30</option>
+        <option value="31">31</option>
+        <option value="32">32</option>
+        <option value="33">33</option>
+        <option value="34">34</option>
+        <option value="35">35</option>
+        <option value="36">36</option>
+        <option value="37">37</option>
+        <option value="38">38</option>
+        <option value="39">39</option>
+        <option value="40">40</option>
+        <option value="41">41</option>
+        <option value="42">42</option>
+        <option value="43">43</option>
+        <option value="44">44</option>
+        <option value="45">45</option>
+        <option value="46">46</option>
+        <option value="47">47</option>
+        <option value="48">48</option>
+        <option value="49">49</option>
+        <option value="50">50</option>
+        <option value="51">51</option>
+        <option value="52">52</option>
+        <option value="53">53</option>
+        <option value="54">54</option>
+        <option value="55">55</option>
+        <option value="56">56</option>
+        <option value="57">57</option>
+        <option value="58">58</option>
+        <option value="59">59</option>
+        <option value="60">60</option>
+        <option value="61">61</option>
+        <option value="62">62</option>
+        <option value="63">63</option>
+        <option value="64">64</option>
+        <option value="65">65</option>
+        <option value="66">66</option>
+        <option value="67">67</option>
+        <option value="68">68</option>
+        <option value="69">69</option>
+        <option value="70">70</option>
+        <option value="71">71</option>
+        <option value="72">72</option>
+        <option value="73">73</option>
+        <option value="74">74</option>
+        <option value="75">75</option>
+        <option value="76">76</option>
+        <option value="77">77</option>
+        <option value="78">78</option>
+        <option value="79">79</option>
+        <option value="80">80</option>
+        <option value="81">81</option>
+        <option value="82">82</option>
+        <option value="83">83</option>
+        <option value="84">84</option>
+        <option value="85">85</option>
+        <option value="86">86</option>
+        <option value="87">87</option>
+        <option value="88">88</option>
+        <option value="89">89</option>
+        <option value="90">90</option>
+        <option value="91">91</option>
+        <option value="92">92</option>
+        <option value="93">93</option>
+        <option value="94">94</option>
+        <option value="95">95</option>
+        <option value="96">96</option>
+        <option value="97">97</option>
+        <option value="98">98</option>
+        <option value="99">99</option>
+        <option value="100">100</option>
+        <option value="101">101</option>
+        <option value="102">102</option>
+        <option value="103">103</option>
+        <option value="104">104</option>
+        <option value="105">105</option>
+        <option value="106">106</option>
+        <option value="107">107</option>
+        <option value="108">108</option>
+        <option value="109">109</option>
+        <option value="110">110</option>
+        <option value="111">111</option>
+        <option value="112">112</option>
+        <option value="113">113</option>
+        <option value="114">114</option>
+        <option value="115">115</option>
+        <option value="116">116</option>
+        <option value="117">117</option>
+        <option value="118">118</option>
+        <option value="119">119</option>
+        <option value="120">120</option>
+        <option value="121">121</option>
+        <option value="122">122</option>
+        <option value="123">123</option>
+        <option value="124">124</option>
+        <option value="125">125</option>
+        <option value="126">126</option>
+        <option value="127">127</option>
+        <option value="128">128</option>
+        <option value="129">129</option>
+        <option value="130">130</option>
+        <option value="131">131</option>
+        <option value="132">132</option>
+        <option value="133">133</option>
+        <option value="134">134</option>
+        <option value="135">135</option>
+        <option value="136">136</option>
+        <option value="137">137</option>
+        <option value="138">138</option>
+        <option value="139">139</option>
+        <option value="140">140</option>
+        <option value="141">141</option>
+        <option value="142">142</option>
+        <option value="143">143</option>
+        <option value="144">144</option>
+        <option value="145">145</option>
+        <option value="146">146</option>
+        <option value="147">147</option>
+        <option value="148">148</option>
+        <option value="149">149</option>
+        <option value="150">150</option>
+        <option value="151">151</option>
+        <option value="152">152</option>
+        <option value="153">153</option>
+        <option value="154">154</option>
+        <option value="155">155</option>
+        <option value="156">156</option>
+        <option value="157">157</option>
+        <option value="158">158</option>
+        <option value="159">159</option>
+        <option value="160">160</option>
+        <option value="161">161</option>
+        <option value="162">162</option>
+        <option value="163">163</option>
+        <option value="164">164</option>
+        <option value="165">165</option>
+        <option value="166">166</option>
+        <option value="167">167</option>
+        <option value="168">168</option>
+        <option value="169">169</option>
+        <option value="170">170</option>
+        <option value="171">171</option>
+        <option value="172">172</option>
+        <option value="173">173</option>
+        <option value="174">174</option>
+        <option value="175">175</option>
+        <option value="176">176</option>
+        </select>
+        <label for="Wersety"><b><i> Werset/y </i></b></label>
+        
+    </p>
+    </td>
+ 
+
+    </tr>
+    </table>
+    
+    <p class="center">
+        <button id="showVerseButton" onclick="displayVerse()">Pokaż Werset</button>
+    </p>
+
+    <br>
+    <div id="verseResult" class="verse-result"></div>
+
+    
+    <div id="result"></div>
+    
+    <br><br><br><br><br><br><br><br>
+  
+   
+
+    
+    
+    
+   
+    <!-- <script src="/js/script.js"></script> -->
+
+    <hr>
+
+
+
+
+    <footer class="base">
+        
+        Darowizna na cele statutowe (1zł) (2zł) (5zł) 
+        <br>
+        przed wysłaniem sprawdź, czy numer konta zgadza się z podanym na stronie, aby mieć pewność, że Twoje wsparcie trafi bezpośrednio do nas.
+        <br>
+        Piotr Zaborski   <b>[BIC SWIFT INGBPLPW] IBAN PL 25 1050 1461 1000 0097 1058 3049</b>
+        <br>
+        <a>kontakt email:</a>
+        <a href="mailto:adm4website@gmail.com">adm4website@gmail.com</a>
+        <br>
+        <p>Wszelkie prawa zastrzeżone &copy; 2026 Play The Bible</p>
+    </footer>
+    </body>
+</html> 
+
+
