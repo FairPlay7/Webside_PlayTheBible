@@ -16,6 +16,30 @@ Play The Bible is a modern web application that provides easy access to search a
 - Web browser (Chrome, Firefox, Safari, Edge)
 - Internet connection
 
+## 📜 License
+This project is licensed under the GNU General Public License v3.0. See the LICENSE file for details.
+
+License: GPL v3
+
+## ✉️ Contact and Support
+Have questions or suggestions? Contact us:
+
+Email: adm4website@gmail.com
+Report an issue via GitHub Issues
+🤝 Contributing
+Contributions are welcome! Please read our CONTRIBUTING.md (to be created) to get started.
+
+## 📊 Project Status
+Python Version
+
+## 🔍 Why Use Play The Bible?
+User-friendly: Intuitive interface
+Multiple Translations: Access to various Bible versions
+Fast: Instant search results
+Free and Open Source: Licensed under GPL-3.0
+No Ads: Clean reading experience
+Responsive: Works on all devices
+
 ## 🛠 Installation and Configuration
 
 ### 1. Clone the repository
@@ -24,26 +48,3 @@ git clone [https://github.com/FairPlay7/Webside_PlayTheBible.git](https://github
 cd Webside_PlayTheBible
 
 
-📜 License
-This project is licensed under the GNU General Public License v3.0. See the LICENSE file for details.
-
-License: GPL v3
-
-✉️ Contact and Support
-Have questions or suggestions? Contact us:
-
-Email: adm4website@gmail.com
-Report an issue via GitHub Issues
-🤝 Contributing
-Contributions are welcome! Please read our CONTRIBUTING.md (to be created) to get started.
-
-📊 Project Status
-Python Version
-
-🔍 Why Use Play The Bible?
-User-friendly: Intuitive interface
-Multiple Translations: Access to various Bible versions
-Fast: Instant search results
-Free and Open Source: Licensed under GPL-3.0
-No Ads: Clean reading experience
-Responsive: Works on all devices
