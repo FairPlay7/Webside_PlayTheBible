@@ -30,7 +30,7 @@
     <dd>Słowo Życia</dd>
     <dd>Przekład Dosłowny</dd>
     <dd>Biblia Toruńska</dd>
-    <dd><i>*Tłumaczenia Słowo Życia, Przekład Dosłowny, Biblia Toruńska nie posiadają części starego testamentu</i></dd>
+    <dd><i>*Tłumaczenia Słowo Życia, Przekład Dosłowny,<br> Biblia Toruńska nie posiadają części starego testamentu</i></dd>
     </td>
     </tr>
 
@@ -131,7 +131,21 @@
 
 <br><br>
 
-<a href="#top">Do góry</a>
+<button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" 
+        id="backToTopButton"
+        title="Przewiń do góry"
+        style="margin: 20px 0; padding: 10px 20px; background-color: #87CEFA; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 16px; transition: background-color 0.3s;">
+    Do góry
+    </button>
+    <script>
+    // Optional: Add hover effect
+    document.getElementById('backToTopButton').addEventListener('mouseover', function() {
+        this.style.backgroundColor = '#45a049';
+    });
+    document.getElementById('backToTopButton').addEventListener('mouseout', function() {
+        this.style.backgroundColor = '#4CAF50';
+    });
+    </script>
 
 
 
