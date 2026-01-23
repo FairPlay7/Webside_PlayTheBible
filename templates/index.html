@@ -17,14 +17,16 @@
         <link rel="icon" href="favicon.ico">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/rules.css') }}">
         <script src="{{ url_for('static', filename='js/script.js') }}"></script>
-        <link rel="manifest" href="{{ url_for('static', filename='site.webmanifest') }}">
 
-        <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <link rel="shortcut icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <!-- Ikona strony -->
+        <link rel="icon" type="image/png" href="{{ url_for('static', filename='icon/favicon-96x96.png') }}" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='icon/favicon.svg') }}" />
+        <link rel="shortcut icon" href="{{ url_for('static', filename='icon/favicon.ico') }}" />
+        <!-- Ikona dla urządzeń Apple -->
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='icon/apple-touch-icon.png') }}" />
         <meta name="apple-mobile-web-app-title" content="Play The Bible" />
-        <link rel="manifest" href="/site.webmanifest" />
+        <!-- Manifest aplikacji -->
+        <link rel="manifest" href="{{ url_for('static', filename='icon/site.webmanifest') }}" />
 
     </head>
 
