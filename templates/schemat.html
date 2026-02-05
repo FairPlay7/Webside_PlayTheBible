@@ -1,5 +1,37 @@
 
-<body style="background-color: #dcdcdc"></body>
+<!DOCTYPE html>
+<html lang="pl">
+    
+    <!-- Nagłówek-->
+    <head>
+        
+        <title>Play The Bible</title>
+        <meta name="description" content="Strona umoliwia wyświetlanie treści
+        wersetów biblijnych bez numeracji oraz bez znaków, których się nie czyta.">
+        <meta name="keywords" content="Bible, Biblia, Biblijny, Odtwarzacz Biblijny, Odtwarzacz Biblijny">
+        <meta name="robots" content="index, follow">
+        <meta name="author" content="Piotr Zaborski">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="favicon.ico">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/rules.css') }}">
+        <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+        <!-- Ikona strony -->
+        <link rel="icon" type="image/png" href="{{ url_for('static', filename='icon/favicon-96x96.png') }}" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='icon/favicon.svg') }}" />
+        <link rel="shortcut icon" href="{{ url_for('static', filename='icon/favicon.ico') }}" />
+        <!-- Ikona dla urządzeń Apple -->
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='icon/apple-touch-icon.png') }}" />
+        <meta name="apple-mobile-web-app-title" content="Play The Bible" />
+        <!-- Manifest aplikacji -->
+        <link rel="manifest" href="{{ url_for('static', filename='icon/site.webmanifest') }}" />
+
+    </head>
+
+    <body style="background-color: #dcdcdc">
+
+
 <link rel="stylesheet" href="css/rules.css">
 
     <div id="lista_tlumaczen"></div>
@@ -20,23 +52,27 @@
 
     <tr>
     <td>
+    <dd>Uwspółcześniona Biblia Gdańska</dd>
+    <dd>Nowa Biblia Gdańska</dd>
     <dd>Biblia Gdańska</dd>
-    <dd>Biblia Warszawska</dd>
     <dd>Biblia Tysiąclecia</dd>
+    <dd>Biblia Warszawska</dd>
     <dd>Biblia Warszawsko-Praska</dd>
     <dd>Edycja Świętego Pawła</dd>
-    <dd>Nowa Biblia Gdańska</dd>
-    <dd>Uwspółcześniona Biblia Gdańska</dd>
     <dd>Biblia Brzeska</dd>
     <dd>Biblia Poznańska</dd>
     <dd>Biblia Jakuba Wujka</dd>
     <dd>Biblia Mesjańska</dd>
     <dd>Biblia Nowego Świata</dd>
     <dd>Biblia Lubelska</dd>
-    <dd>Słowo Życia</dd>
-    <dd>Przekład Dosłowny</dd>
-    <dd>Biblia Toruńska</dd>
-    <dd><i>*Tłumaczenia Słowo Życia, Przekład Dosłowny,<br> Biblia Toruńska nie posiadają części starego testamentu</i></dd>
+    <dd>Słowo Życia (tłumaczenie Nowego Testamentu)</dd>
+    <dd>Przekład Dosłowny (tłumaczenie Nowego Testamentu)</dd>
+    <dd>Biblia Toruńska(tłumaczenie Nowego Testamentu)</dd>
+    <dd style="color: green;">King James Version (Eng.)</dd>
+    <dd style="color: green;">Webster Bible (Eng.)</dd>
+    <dd style="color: green;">Young’s Literal Translation (Eng.)</dd>
+    <dd style="color: blue;">Łacińska Vulgata (tłumaczenie starożytnych)</dd>
+    <dd style="color: blue;">Grecka Septuaginta (tłumaczenie starożytnych)</dd>
     </td>
     </tr>
 
@@ -132,7 +168,40 @@
 </table>
 
 
+<br>
 
+<!-- Reklama -->
+    <style>
+    .ad-container {
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        margin: 20px 0;
+    }
+    .ad-image {
+        width: 750px; 
+        height: 200px; 
+        border: 0; 
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
+    @media (max-width: 800px) {
+        .ad-image {
+            width: 100%;
+            max-width: 750px;
+        }
+    }
+    </style>
+
+    <div class="ad-container">
+        <a href="https://tmlead.pl/redirect/804766_2698" target="_blank" rel="noopener noreferrer">
+            <img src="{{ url_for('static', filename='ads/DBP-45422_750x200_percent_M.jpg') }}" 
+                alt="Reklama" 
+                class="ad-image">
+        </a>
+    </div>
+    <!-- Koniec reklamy-->
 
 
 <br><br>
@@ -157,7 +226,7 @@
 
 
 
-<br><br><br><br>
+<br><br><br>
 
  <hr>
 
@@ -174,3 +243,6 @@
         <br>
         <p>Wszelkie prawa zastrzeżone &copy; 2026 Play The Bible</p>
     </footer>
+
+</body>
+</html>

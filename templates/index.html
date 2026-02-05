@@ -33,8 +33,41 @@
     <body style="background-color: #dcdcdc">
    
 
+    <!-- Reklama -->
+    <style>
+    .ad-container {
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        margin: 20px 0;
+    }
+    .ad-image {
+        width: 750px; 
+        height: 200px; 
+        border: 0; 
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
+    @media (max-width: 800px) {
+        .ad-image {
+            width: 100%;
+            max-width: 750px;
+        }
+    }
+    </style>
 
-    <br><br><br><br><br><br><br><br>
+    <div class="ad-container">
+        <a href="https://tmlead.pl/redirect/804766_2698" target="_blank" rel="noopener noreferrer">
+            <img src="{{ url_for('static', filename='ads/DBP-45422_750x200_percent_M.jpg') }}" 
+                alt="Reklama" 
+                class="ad-image">
+        </a>
+    </div>
+    <!-- Koniec reklamy-->
+
+
+    <br><br><br>
      
     <i>
         <h1 title="Play The Bible" class="center">Odtwarzacz Biblijny</h1><br>
@@ -58,14 +91,14 @@
 
     <!-- Lista dostępnych tłumaczeń Biblii: -->
     <p class="center">
-        <select id="translation">
+        <select id="translation" style="color: black;"> 
+        <option value="ug">Uwspółcześniona Biblia Gdańska</option>
+        <option value="ng">Nowa Biblia Gdańska</option>
         <option value="bg">Biblia Gdańska</option>
-        <option value="bw">Biblia Warszawska</option>
         <option value="bt">Biblia Tysiąclecia</option>
+        <option value="bw">Biblia Warszawska</option>
         <option value="br">Biblia Warszawsko-Praska</option>
         <option value="esp">Edycja Świętego Pawła</option>
-        <option value="ng">Nowa Biblia Gdańska</option>
-        <option value="ug">Uwspółcześniona Biblia Gdańska</option>
         <option value="bb">Biblia Brzeska</option>
         <option value="bp">Biblia Poznańska</option>
         <option value="jw">Biblia Jakuba Wujka</option>
@@ -75,6 +108,11 @@
         <option value="sz">Słowo Życia</option>
         <option value="eib">Przekład Dosłowny</option>
         <option value="tnp">Biblia Toruńska</option>
+        <option value="kjv" style="color: green;">King James Version (Eng.)</option>
+        <option value="web" style="color: green;">Webster Bible (Eng.)</option>
+        <option value="ylt" style="color: green;">Young’s Literal Translation (Eng.)</option>
+        <option value="vul" style="color: blue;">Łacińska Vulgata</option>
+        <option value="gr" style="color: blue;">Grecka Septuaginta</option>
         </select>
         <label for="translation"><b><i> Tłumaczenie biblijne</i></b></label>
     </p>
@@ -716,7 +754,7 @@
     
     <div id="result"></div>
     
-    <br><br><br><br><br><br><br><br>
+    <br><br><br>
   
 
    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" 
@@ -735,8 +773,40 @@
     });
     </script>
     
+    <br>
     
-    
+    <!-- Reklama -->
+    <style>
+    .ad-container {
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        margin: 20px 0;
+    }
+    .ad-image {
+        width: 750px; 
+        height: 200px; 
+        border: 0; 
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
+    @media (max-width: 800px) {
+        .ad-image {
+            width: 100%;
+            max-width: 750px;
+        }
+    }
+    </style>
+
+    <div class="ad-container">
+        <a href="https://tmlead.pl/redirect/804766_2698" target="_blank" rel="noopener noreferrer">
+            <img src="{{ url_for('static', filename='ads/DBP-45422_750x200_percent_M.jpg') }}" 
+                alt="Reklama" 
+                class="ad-image">
+        </a>
+    </div>
+    <!-- Koniec reklamy-->
    
     <!-- <script src="/js/script.js"></script> -->
 
