@@ -1,7 +1,5 @@
-
 <!DOCTYPE html>
 <html lang="pl">
-    
     <!-- Nagłówek-->
     <head>
         
@@ -33,8 +31,7 @@
 
 
 <link rel="stylesheet" href="css/rules.css">
-
-    <div id="lista_tlumaczen"></div>
+   
 
      <!-- Przycisk powrotu -->
     <button onclick="window.location.href='{{ url_for('home') }}'"
@@ -44,8 +41,7 @@
     Powrót
     </button>
 
-
-     <!-- Reklama -->
+    <!-- Reklama -->
     <div style="text-align: center; margin: 20px 0;">
     <a href="https://buycoffee.to/playthebible" target="_blank">
         <img src="https://buycoffee.to/static/img/share/share-button-primary.png" 
@@ -53,10 +49,11 @@
              alt="Postaw mi kawę na buycoffee.to">
     </a>
     </div>
-    
     <!-- Koniec reklamy-->
 
-     <!-- Przyciski nawigacyjne -->
+
+
+         <!-- Przyciski nawigacyjne -->
 <div style="text-align: center; margin: 20px 0;">
     <button onclick="window.location.href='{{ url_for('index') }}'" 
             style="margin: 0 5px; padding: 10px 20px; background-color: #87CEFA; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 16px; transition: background-color 0.3s; min-width: 120px;">
@@ -93,138 +90,65 @@ document.querySelectorAll('button[onclick*="window.location.href"]').forEach(fun
 </script>
 <!-- Koniec Przycisków nawigacyjnych -->
 
+    <br><br>
+     
 
 
 
-
-<br>
-<table style="margin: 0 auto;">
-    <tr >
-    <th>Spis tłumaczeń Biblii</th>
-    </tr>
-
-    <tr>
-    <td>
-    <dd>Uwspółcześniona Biblia Gdańska</dd>
-    <dd>Nowa Biblia Gdańska</dd>
-    <dd>Biblia Gdańska</dd>
-    <dd>Biblia Tysiąclecia</dd>
-    <dd>Biblia Warszawska</dd>
-    <dd>Biblia Warszawsko-Praska</dd>
-    <dd>Edycja Świętego Pawła</dd>
-    <dd>Biblia Brzeska</dd>
-    <dd>Biblia Poznańska</dd>
-    <dd>Biblia Jakuba Wujka</dd>
-    <dd>Biblia Mesjańska</dd>
-    <dd>Biblia Nowego Świata</dd>
-    <dd>Biblia Lubelska</dd>
-    <dd>Słowo Życia (tłumaczenie Nowego Testamentu)</dd>
-    <dd>Przekład Dosłowny (tłumaczenie Nowego Testamentu)</dd>
-    <dd>Biblia Toruńska(tłumaczenie Nowego Testamentu)</dd>
-    <dd style="color: green;">King James Version (Eng.)</dd>
-    <dd style="color: green;">Webster Bible (Eng.)</dd>
-    <dd style="color: green;">Young’s Literal Translation (Eng.)</dd>
-    <dd style="color: blue;">Łacińska Vulgata (tłumaczenie starożytnych)</dd>
-    <dd style="color: blue;">Grecka Septuaginta (tłumaczenie starożytnych)</dd>
-    </td>
-    </tr>
-
-</table>
-
-
-<br><br><br>
-
-<div id="lista_ksiegi"></div>
-<table style="margin: 0 auto;">
-    <tr>
-    <th>Ksiągi Starego Testamentu</th>
-    <th>Ksiągi Nowego Testamentu</th>
-    </tr>
-
-
-    <tr>
-    <td>
-    <dd>Ks. Rodzaju </dd>
-    <dd>Ks. Wyjścia </dd>
-    <dd>Ks. Kapłańska</dd>
-    <dd>Ks. Liczb</dd>
-    <dd>Ks. Powtórzonego Prawa</dd>
-    <dd>Ks. Jozuego </dd>
-    <dd>Ks. Sędziów</dd>
-    <dd>Ks. Rut</dd>
-    <dd>1 Ks. Samuela</dd>
-    <dd>2 Ks. Samuela</dd>
-    <dd>1 Ks. Królewska</dd>
-    <dd>2 Ks. Królewska</dd>
-    <dd>1 Ks. Kronik</dd>
-    <dd>2 Ks. Kronik</dd>
-    <dd>Ks. Ezdrasza</dd>
-    <dd>Ks. Nehemiasza</dd>
-    <dd>Ks. Estery</dd>
-    <dd>Ks. Hioba</dd>
-    <dd>Ks. Psalmów</dd>
-    <dd>Ks. Przysłów</dd>
-    <dd>Ks. Koheleta</dd>
-    <dd>Pieśń nad pieśniami</dd>
-    <dd>Ks. Izajasza</dd>
-    <dd>Ks. Jeremiasza</dd>
-    <dd>Lamentacje Jeremiasza</dd>
-    <dd>Ks. Ezechiela</dd>
-    <dd>Ks. Daniela</dd>
-    <dd>Ks. Ozeasza</dd>
-    <dd>Ks. Joela</dd>
-    <dd>Ks. Amosa</dd>
-    <dd>Ks. Abdiasza</dd>
-    <dd>Ks. Jonasza</dd>
-    <dd>Ks. Micheasza</dd>
-    <dd>Ks. Nahuma</dd>
-    <dd>Ks. Habakuka</dd>
-    <dd>Ks. Sofoniasza</dd>
-    <dd>Ks. Aggeusza</dd>
-    <dd>Ks. Zachariasza</dd>
-    <dd>Ks. Malachiasza</dd>
-    <dd><i>*Kanon hebrajski, znany jako Tanach</i></dd>
-    </td>
-
-
-    <td>
-    <dd>Ew. Mateusza</dd>
-    <dd>Ew. Marka</dd>
-    <dd>Ew. Łukasza</dd>
-    <dd>Ew. Jana</dd>
-    <dd>Dzieje Apost.</dd>
-    <dd>List do Rzymian</dd>
-    <dd>1 list do Koryntian</dd>
-    <dd>2 list do Koryntian</dd>
-    <dd>List do Galatów</dd>
-    <dd>List do Efezjan</dd>
-    <dd>List do Filipian</dd>
-    <dd>List do Kolosan</dd>
-    <dd>1 List do Tesaloniczan</dd>
-    <dd>2 List do Tesaloniczan</dd>
-    <dd>1 List do Tymoteusza</dd>
-    <dd>2 List do Tymoteusza</dd>
-    <dd>List do Tytusa</dd>
-    <dd>List do Filemona</dd>
-    <dd>List do Hebrajczyków</dd>
-    <dd>List Jakuba</dd>
-    <dd>1 List Piotra</dd>
-    <dd>2 List Piotra</dd>
-    <dd>1 List Jana</dd>
-    <dd>2 List Jana</dd>
-    <dd>3 List Jana</dd>
-    <dd>List Judy</dd>
-    <dd>Apokalipsa (Objawienie)</dd>
-</td>
+    <i>
+        <h1 title="Play The Bible" class="center">Losowy werset z Biblii</h1><br>
+    </i>
     
-    </tr>
-</table>
+    <!--Informacja dla użytkownika, jak działa strona-->
+    <p class="center">
+        Strona umożliwia wylosowanie wersetu z Biblii
+        <br>
+        Kliknij "Wylosuj werset" ponownie, aby zobaczyć inny werset
+    </p>
 
 
-<br>
+ 
 
-   <!-- Reklama -->
-   <div style="text-align: center; margin: 20px 0;">
+
+
+
+
+
+
+
+
+
+
+    <!-- Przycisk wyświetlania wersetu -->
+    <p class="center">
+        <button id="showRandomButton" onclick="displayRandomVerse()">Wylosuj werset</button>
+    </p>
+
+    <br>
+     <!-- Kod wyświetlania rezultatu -->
+    <div id="verseRandomResult" class="verse-random-result"></div>
+
+    
+    <div id="result"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br><br><br><br><br><br><br>
+
+    <!-- Reklama -->
+    <div style="text-align: center; margin: 20px 0;">
     <a href="https://buycoffee.to/playthebible" target="_blank" rel="noopener noreferrer">
         <img src="{{ url_for('static', filename='ads/QR_buycoffee.png') }}" 
              alt="Kup mi kawę" 
@@ -234,9 +158,7 @@ document.querySelectorAll('button[onclick*="window.location.href"]').forEach(fun
     <!-- Koniec reklamy-->
 
 
-<br><br>
-
-<button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" 
+   <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" 
         id="backToTopButton"
         title="Przewiń do góry"
         style="margin: 20px 0; padding: 10px 20px; background-color: #87CEFA; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 16px; transition: background-color 0.3s;">
@@ -251,17 +173,9 @@ document.querySelectorAll('button[onclick*="window.location.href"]').forEach(fun
         this.style.backgroundColor = '#4169E1';
     });
     </script>
-
-
-
-
-
-<br><br>
-
- <hr>
-
-  
-<!--Stopka -->
+    
+    <br>
+    <!--Stopka -->
 <footer class="base" style="background-color: #333333; border-top: 2px solid #555555; padding: 20px 0;">
 <br>
 
@@ -297,9 +211,15 @@ document.querySelectorAll('button[onclick*="window.location.href"]').forEach(fun
 
 </footer>
 
+    
+
+
+
+
+
 
 
 
 
 </body>
-</html>
+</html> 

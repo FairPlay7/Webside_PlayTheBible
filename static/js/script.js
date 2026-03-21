@@ -81,3 +81,97 @@ document.addEventListener('DOMContentLoaded', function() {
         button.addEventListener('click', displayVerse);
     }
 });
+
+
+
+
+
+
+
+
+
+// Do podstrony Losowanie Wersetów
+
+function displayRandomVerse() {
+    console.log('Rozpoczynam pobieranie wersetu...');
+    
+    const resultElement = document.getElementById('verseRandomResult');
+    if (!resultElement) {
+        console.error('Element verseRandomResult nie znaleziony');
+        return;
+    }
+    
+    // Wyświetl komunikat ładowania
+    resultElement.innerHTML = 
+        '<div style="text-align: center; padding: 20px;">' +
+        '<h3>Ładowanie wersetu...</h3>' +
+        '</div>';
+    
+    // Wywołaj API dla losowego wersetu
+    fetch('/api/random-verse')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data.success) {
+                // Wyświetl werset z nazwą na białym pasku
+                const verseTitle = data.name || 'Losowy werset';
+                
+                resultElement.innerHTML = 
+                    '<div style="margin: 20px 0;">' +
+                        '<div style="font-family: Arial, sans-serif; font-size: 18px; font-weight: bold; color: black; margin-bottom: 10px;">' +
+                            'Został wylosowany werset: ' + verseTitle +
+                        '</div>' +
+                        '<div style="background-color: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">' +
+                            '<div style="font-family: Arial, sans-serif; font-size: 18px; line-height: 1.6; color: black; text-align: left;">' +
+                                data.text +
+                            '</div>' +
+                        '</div>' +
+                    '</div>';
+            } else {
+                // Wyświetl błąd
+                resultElement.innerHTML = 
+                    '<div style="margin: 20px 0;">' +
+                        '<div style="font-family: Arial, sans-serif; font-size: 18px; font-weight: bold; color: #d32f2f; margin-bottom: 10px;">' +
+                            'Błąd ładowania wersetu' +
+                        '</div>' +
+                        '<div style="background-color: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">' +
+                            '<p style="color: #666;">' + data.text + '</p>' +
+                        '</div>' +
+                    '</div>';
+            }
+        })
+        .catch(error => {
+            console.error('Błąd fetch:', error);
+            
+            // Wyświetl błąd sieciowy
+            resultElement.innerHTML = 
+                '<div style="margin: 20px 0;">' +
+                    '<div style="font-family: Arial, sans-serif; font-size: 18px; font-weight: bold; color: #d32f2f; margin-bottom: 10px;">' +
+                        'Błąd połączenia z serwerem' +
+                    '</div>' +
+                    '<div style="background-color: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">' +
+                        '<p style="color: #666;">Szczegóły: ' + error.message + '</p>' +
+                        '<button onclick="location.reload()" style="margin-top: 10px; padding: 8px 16px; background-color: #87CEFA; color: white; border: none; border-radius: 4px; cursor: pointer;">Spróbuj ponownie</button>' +
+                    '</div>' +
+                '</div>';
+        });
+}
+
+
+
+
+
+// Obsługa przycisku losowego wersetu
+document.addEventListener('DOMContentLoaded', function() {
+    const randomButton = document.getElementById('showRandomButton');
+    if (randomButton) {
+        randomButton.addEventListener('click', displayRandomVerse);
+    } else {
+        console.error('Przycisk showRandomButton nie znaleziony');
+    }
+});
+
