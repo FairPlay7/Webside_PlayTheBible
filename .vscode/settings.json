@@ -1,4 +1,6 @@
 {
     "git.ignoreLimitWarning": true,
-    "fiveServer.injectBody": true
+    "fiveServer.injectBody": true,
+    "eslint.enable": false
 }
+
