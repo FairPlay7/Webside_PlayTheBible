@@ -1,18 +1,17 @@
 
-
 <!DOCTYPE html>
 <html lang="pl">
     
     <!-- Nagłówek-->
     <head>
-        
+        <meta charset="UTF-8">
         <title>Play The Bible</title>
+        <link rel="canonical" href="https://playthebible.pl/index" />
         <meta name="description" content="Strona umoliwia wyświetlanie treści
         wersetów biblijnych bez numeracji oraz bez znaków, których się nie czyta.">
         <meta name="keywords" content="Bible, Biblia, Biblijny, Odtwarzacz Biblijny, Odtwarzacz Biblijny">
         <meta name="robots" content="index, follow">
         <meta name="author" content="Piotr Zaborski">
-        <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" href="favicon.ico">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/rules.css') }}">
@@ -51,6 +50,7 @@
 
 
     <!-- Przyciski nawigacyjne -->
+<!-- eslint-disable -->
 <div style="text-align: center; margin: 20px 0;">
     <button onclick="window.location.href='{{ url_for('index') }}'" 
             style="margin: 0 5px; padding: 10px 20px; background-color: #87CEFA; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 16px; transition: background-color 0.3s; min-width: 120px;">
