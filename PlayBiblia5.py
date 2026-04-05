@@ -302,3 +302,136 @@ def get_random_verse_endpoint():
 
 
 
+
+
+
+
+
+# endpoint do wszystkich tłumaczeń wersetów
+@app.route('/api/books')
+def get_books():
+    try:
+        # Lista ksiąg Starego i Nowego Testamentu
+        books = [
+            {"value": "rdz", "name": "Rodzaju"},
+            {"value": "wj", "name": "Wyjścia"},
+            {"value": "kpl", "name": "Kpł"},
+            {"value": "lb", "name": "Lewitic"},
+            {"value": "lb", "name": "Lb"},
+            {"value": "joz", "name": "Jozuego"},
+            {"value": "sdz", "name": "Sędzi"},
+            {"value": "sdz", "name": "Sdz"},
+            {"value": "ne", "name": "Nehemiasza"},
+            {"value": "est", "name": "Estery"},
+            {"value": "job", "name": "Joba"},
+            {"value": "ps", "name": "Psalm"},
+            {"value": "prz", "name": "Przysłów"},
+            {"value": "pnp", "name": "Pieśń nad Pieśniami"},
+            {"value": "iz", "name": "Izajasza"},
+            {"value": "jr", "name": "Jeremiasza"},
+            {"value": "lm", "name": "Lamentacje"},
+            {"value": "ez", "name": "Ezechiela"},
+            {"value": "dn", "name": "Daniela"},
+            {"value": "oz", "name": "Ozejasza"},
+            {"value": "jo", "name": "Joela"},
+            {"value": "am", "name": "Amosa"},
+            {"value": "jon", "name": "Jonasza"},
+            {"value": "mi", "name": "Michasza"},
+            {"value": "nah", "name": "Nahuma"},
+            {"value": "hab", "name": "Habakuka"},
+            {"value": "sof", "name": "Sofoniasza"},
+            {"value": "ag", "name": "Aggeusza"},
+            {"value": "za", "name": "Zachariasza"},
+            {"value": "mal", "name": "Malachiasza"},
+            {"value": "mt", "name": "Mateusza"},
+            {"value": "mk", "name": "Marka"},
+            {"value": "łk", "name": "Łukasza"},
+            {"value": "jan", "name": "Jana"},
+            {"value": "dz", "name": "Dzieje Apostolskie"},
+            {"value": "rz", "name": "Rzymian"},
+            {"value": "1kor", "name": "1 Koryntian"},
+            {"value": "2kor", "name": "2 Koryntian"},
+            {"value": "ga", "name": "Galatów"},
+            {"value": "ef", "name": "Efezjan"},
+            {"value": "flp", "name": "Filipian"},
+            {"value": "kol", "name": "Kolosan"},
+            {"value": "1tes", "name": "1 Tesaloniczan"},
+            {"value": "2tes", "name": "2 Tesaloniczan"},
+            {"value": "1tm", "name": "1 Tymoteusza"},
+            {"value": "2tm", "name": "2 Tymoteusza"},
+            {"value": "tyt", "name": "Tytusa"},
+            {"value": "flm", "name": "Filemona"},
+            {"value": "hbr", "name": "Hebrajczyków"},
+            {"value": "jk", "name": "Jakuba"},
+            {"value": "1p", "name": "1 Piotra"},
+            {"value": "2p", "name": "2 Piotra"},
+            {"value": "1j", "name": "1 Jana"},
+            {"value": "2j", "name": "2 Jana"},
+            {"value": "3j", "name": "3 Jana"},
+            {"value": "jud", "name": " Judy"},
+            {"value": "obj", "name": "Objawienie"}
+        ]
+        
+        return jsonify(books)
+        
+    except Exception as e:
+        return jsonify({"status": "error", "message": f"Błąd: {str(e)}"}, 500)
+
+@app.route('/api/chapters/<book>')
+def get_chapters(book):
+    try:
+        # Mapowanie liczby rozdziałów dla poszczególnych ksiąg
+        chapters_count = {
+            "rdz": 50, "wj": 40, "kpl": 27, "lb": 24, "joz": 24, "sdz": 12, "ne": 13,
+            "est": 10, "job": 42, "ps": 150, "prz": 31, "pnp": 8, "iz": 66, "jr": 52,
+            "lm": 5, "ez": 48, "dn": 12, "oz": 14, "jo": 9, "am": 9, "jon": 4,
+            "mi": 7, "nah": 3, "hab": 3, "sof": 3, "ag": 14, "za": 14, "mal": 4,
+            "mt": 28, "mk": 16, "łk": 24, "jan": 21, "dz": 28, "rz": 16, "1kor": 16,
+            "2kor": 13, "ga": 6, "ef": 6, "flp": 4, "kol": 4, "1tes": 5, "2tes": 3,
+            "1tm": 6, "2tm": 4, "tyt": 3, "flm": 1, "hbr": 13, "jk": 5, "1p": 5,
+            "2p": 3, "1j": 5, "2j": 1, "3j": 1, "jud": 1, "obj": 22
+        }
+        
+        max_chapters = chapters_count.get(book, 0)
+        if max_chapters == 0:
+            return jsonify({"status": "error", "message": "Nieznana księga"}, 404)
+        
+        chapters = [{"value": i, "name": f"Rozdział {i}"} for i in range(1, max_chapters + 1)]
+        return jsonify(chapters)
+        
+    except Exception as e:
+        return jsonify({"status": "error", "message": f"Błąd: {str(e)}"}, 500)
+
+@app.route('/api/verses/<book>/<chapter>')
+def get_verses(book, chapter):
+    try:
+        # Mapowanie liczby wersetów dla poszczególnych ksiąg i rozdziałów
+        # Używamy przybliżonej liczby wersetów (może się różnić w zależności od wydania Biblii)
+        verses_count = {
+            "rdz": {1: 31, 2: 25, 3: 24, 4: 26, 5: 32, 6: 22, 7: 24, 8: 22, 9: 29, 10: 32, 11: 32, 12: 20, 13: 18, 14: 24, 15: 21, 16: 16, 17: 28, 18: 33, 19: 38, 20: 18, 21: 24, 22: 24, 23: 20, 24: 67, 25: 34, 26: 35, 27: 46, 28: 22, 29: 29, 30: 43, 31: 55, 32: 32, 33: 20, 34: 31, 35: 29, 36: 43, 37: 36, 38: 30, 39: 23, 40: 38, 41: 57, 42: 51, 43: 34, 44: 23, 45: 28, 46: 34, 47: 31, 48: 35, 49: 26, 50: 26},
+            "wj": {1: 22, 2: 25, 3: 17, 4: 20, 5: 23, 6: 30, 7: 25, 8: 16, 9: 20, 10: 22, 11: 10, 12: 46, 13: 23, 14: 31, 15: 22, 16: 18, 17: 18, 18: 27, 19: 25, 20: 26, 21: 37, 22: 31, 23: 45, 24: 23, 25: 23, 26: 27, 27: 21, 28: 43, 29: 46, 30: 38, 31: 22, 32: 35, 33: 20, 34: 35, 35: 23, 36: 38, 37: 29, 38: 31, 39: 43, 40: 38},
+            "kpl": {1: 22, 2: 25, 3: 17, 4: 24, 5: 23, 6: 25, 7: 24, 8: 18, 9: 20, 10: 29, 11: 16, 12: 23, 13: 18, 14: 31, 15: 20, 16: 33, 17: 27, 18: 26, 19: 25, 20: 29, 21: 37, 22: 24, 23: 21, 24: 28, 25: 23, 26: 46, 27: 22},
+            "lb": {1: 29, 2: 23, 3: 20, 4: 24, 5: 21, 6: 25, 7: 24, 8: 17, 9: 28, 10: 29, 11: 32, 12: 23, 13: 18, 14: 22, 15: 26, 16: 33, 17: 24, 18: 27, 19: 36, 20: 18, 21: 33, 22: 20, 23: 30, 24: 51, 25: 23, 26: 46, 27: 22},
+            "joz": {1: 18, 2: 24, 3: 17, 4: 20, 5: 23, 6: 25, 7: 24, 8: 18, 9: 28, 10: 43, 11: 23, 12: 15, 13: 29, 14: 22, 15: 20, 16: 18, 17: 17, 18: 9, 19: 18, 20: 46, 21: 26, 22: 33, 23: 27, 24: 16},
+            "sdz": {1: 15, 2: 23, 3: 20, 4: 21, 5: 22, 6: 25, 7: 18, 8: 18, 9: 20, 10: 27, 11: 23, 12: 25, 13: 19, 14: 24, 15: 19, 16: 20},
+            "ne": {1: 11, 2: 20, 3: 32, 4: 6, 5: 19, 6: 15, 7: 73, 8: 18, 9: 38, 10: 34, 11: 31, 12: 22, 13: 31},
+            "est": {1: 22, 2: 23, 3: 14, 4: 17, 5: 27, 6: 14, 7: 15, 8: 17, 9: 15, 10: 26},
+            "job": {1: 22, 2: 13, 3: 19, 4: 21, 5: 27, 6: 30, 7: 21, 8: 22, 9: 35, 10: 42, 11: 20, 12: 13, 13: 15, 14: 17, 15: 21, 16: 22, 17: 16, 18: 21, 19: 29, 20: 29, 21: 34, 22: 30, 23: 24, 24: 17, 25: 17, 26: 33, 27: 23, 28: 28, 29: 25, 30: 24, 31: 21, 32: 22, 33: 25, 34: 29, 35: 30, 36: 33, 37: 23, 38: 41, 39: 31, 40: 26, 41: 34, 42: 17},
+            "ps": {1: 6, 2: 12, 3: 8, 4: 8, 5: 12, 6: 9, 7: 17, 8: 9, 9: 20, 10: 4, 11: 7, 12: 9, 13: 6, 14: 7, 15: 5, 16: 11, 17: 15, 18: 50, 19: 14, 20: 9, 21: 13, 22: 31, 23: 6, 24: 10, 25: 22, 26: 12, 27: 14, 28: 9, 29: 11, 30: 12, 31: 11, 32: 11, 33: 7, 34: 22, 35: 28, 36: 13, 37: 40, 38: 22, 39: 8, 40: 13, 41: 13, 42: 9, 43: 17, 44: 26, 45: 17, 46: 11, 47: 14, 48: 20, 49: 20, 50: 26, 51: 19, 52: 11, 53: 6, 54: 11, 55: 24, 56: 17, 57: 11, 58: 11, 59: 17, 60: 12, 61: 8, 62: 12, 63: 11, 64: 10, 65: 13, 66: 20, 67: 7, 68: 35, 69: 13, 70: 19, 71: 24, 72: 20, 73: 17, 74: 16, 75: 22, 76: 12, 77: 72, 78: 39, 79: 13, 80: 7, 81: 13, 82: 8, 83: 18, 84: 13, 85: 13, 86: 17, 87: 7, 88: 18, 89: 52, 90: 17, 91: 16, 92: 15, 93: 11, 94: 23, 95: 12, 96: 17, 97: 12, 98: 9, 99: 9, 100: 5, 101: 10, 102: 22, 103: 8, 104: 17, 105: 9, 106: 23, 107: 16, 108: 13, 109: 19, 110: 6, 111: 10, 112: 10, 113: 7, 114: 8, 115: 18, 116: 18, 117: 9, 118: 72, 119: 72, 120: 6, 121: 7, 122: 9, 123: 6, 124: 8, 125: 9, 126: 9, 127: 6, 128: 8, 129: 8, 130: 6, 131: 7, 132: 18, 133: 17, 134: 12, 135: 7, 136: 9, 137: 9, 138: 3, 139: 8, 140: 13, 141: 10, 142: 12, 143: 5, 144: 8, 145: 19, 146: 17, 147: 20, 148: 14, 149: 9, 150: 6}
+        }
+        
+        book_verses = verses_count.get(book, {})
+        chapter_verses = book_verses.get(int(chapter), 0)
+        
+        if chapter_verses == 0:
+            return jsonify({"status": "error", "message": "Nieznany rozdział lub brak wersetów"}, 404)
+        # Przetwórz wersety
+        verses_list = []
+        for verse in verses:
+            verses_list.append({"value": verse[0], "name": verse[0]})
+        
+        return jsonify(verses_list)
+        
+    except Exception as e:
+        return jsonify({"status": "error", "message": f"Błąd: {str(e)}"}, 500)
+

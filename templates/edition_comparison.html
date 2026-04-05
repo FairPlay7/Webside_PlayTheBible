@@ -152,8 +152,6 @@ document.querySelectorAll('button[onclick*="window.location.href"]').forEach(fun
     
     <!--Informacja dla użytkownika, jak działa strona-->
     <p class="center">
-        Strona w budowie
-        <br>
         Strona umożliwia porównanie tłumaczeń Biblii
     </p>
 
@@ -163,7 +161,7 @@ document.querySelectorAll('button[onclick*="window.location.href"]').forEach(fun
     <td>
     <!-- Lista dostępnych ksiąg: -->
     <p class="center">
-        <select id="book">
+        <select id="book_comparison">
         <option color="blue" value="Gen">&ast;&ast;Stary Testament&ast;&ast;</option>  
         <option value="Gen">Ks. Rodzaju </option>
         <option value="Ex">Ks. Wyjścia</option>
@@ -244,7 +242,7 @@ document.querySelectorAll('button[onclick*="window.location.href"]').forEach(fun
     <td>
     <!-- Lista dostępnych nr rozdzaiłów: -->
     <p class="center">
-        <select id="chapter">
+        <select id="chapter_comparison">
         <option value="1"> 1</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -406,7 +404,7 @@ document.querySelectorAll('button[onclick*="window.location.href"]').forEach(fun
     <!-- Lista dostępnych nr wersetów od lub jedynie ten werset: -->
     <td>
     <p class="center">
-        <select id="verse">
+        <select id="verse_comparison">
         <option value="0">&mdash;</option>  
         <option value="1">1</option>
         <option value="2">2</option>
@@ -595,7 +593,7 @@ document.querySelectorAll('button[onclick*="window.location.href"]').forEach(fun
     <td>
     <!-- Lista dostępnych nr wersetów do: -->
      <p class="center">
-        <select id="verse2">
+        <select id="verse2_comparison">
         <option value="0">&mdash;</option>  
         <option value="0">1</option>
         <option value="2">2</option>
@@ -784,19 +782,42 @@ document.querySelectorAll('button[onclick*="window.location.href"]').forEach(fun
     </table>
     
 
-    <!-- Przycisk
-    <p class="center">
-        <button id="showVerseButton" onclick="displayVerse()">Pokaż Werset</button>
-    </p>-->
-
-    <!-- Rezultat
-    <br>
-    <div id="verseResult" class="verse-result"></div>-->
+   
     
-    <div id="result"></div>
+    <!-- Przycisk wyświetlania wersetów rónych tłumaczeń jednocześnie -->
+    <p class="center">
+        <button id="showVerseButtonAllTranslations" onclick="displayVerseAllTranslations()">Pokaż Tłumaczenia</button>
+    </p>
+
+    <br>
+     <!-- Kod wyświetlania rezultatu -->
+    <div id="verseResult" class="verse-result"></div>
+    
+    <div id="error" style="color: red; text-align: center; margin: 10px 0;"></div>
+    
+
+
     
     <br>
   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <!-- Reklama -->
     <div style="text-align: center; margin: 20px 0;">
     <a href="https://buycoffee.to/playthebible" target="_blank" rel="noopener noreferrer">
@@ -826,6 +847,11 @@ document.querySelectorAll('button[onclick*="window.location.href"]').forEach(fun
     
     <br><br><br><br><br><br><br><br><br><br><br>
     
+
+
+
+
+
   <!--Stopka -->
 <footer class="base" style="background-color: #333333; border-top: 2px solid #555555; padding: 20px 0;">
 <br>
