@@ -36,12 +36,15 @@
         <meta name="apple-mobile-web-app-title" content="Play The Bible" />
         <!-- Manifest aplikacji -->
         <link rel="manifest" href="{{ url_for('static', filename='icon/site.webmanifest') }}" />
+        <!-- Baner Cookies -->
+        <script src="{{ url_for('static', filename='js/cookies.js') }}"></script>
 
     </head>
 
     <body style="background-color: #dcdcdc">
 
 
+    <!-- Podpięte TAGI -->
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PLBJHHZ4"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -55,8 +58,16 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
+    // Domyślne ustawienia zgody (do czasu decyzji użytkownika)
+    gtag('consent', 'default', {
+        'analytics_storage': 'denied',
+        'ad_storage': 'denied',
+        'functionality_storage': 'granted'
+    });
+
     gtag('config', 'G-7XMBQJMBVJ');
     </script>
+    <!-- Koniec Podpięcia TAGów -->
 
 
 
