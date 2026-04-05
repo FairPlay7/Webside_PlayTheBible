@@ -90,6 +90,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+
+
+
+
 // Do podstrony Losowanie Wersetów
 
 function displayRandomVerse() {
