@@ -109,7 +109,7 @@ Dzięki Play The Bible, dostęp do duchowości staje się prostszy niż kiedykol
 
          <!-- Przyciski nawigacyjne -->
 <!-- eslint-disable -->
-<div style="text-align: center; margin: 20px 0;">
+<div id="przyciski-nawigacyjne" style="text-align: center; margin: 20px 0;">
     <button onclick="window.location.href='{{ url_for('index') }}'" 
             style="margin: 0 5px; padding: 10px 20px; background-color: #87CEFA; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 16px; transition: background-color 0.3s; min-width: 120px;">
         główna
@@ -213,12 +213,14 @@ document.querySelectorAll('button[onclick*="window.location.href"]').forEach(fun
     <!-- Koniec reklamy-->
 
 
-   <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" 
-        id="backToTopButton"
-        title="Przewiń do góry"
-        style="margin: 20px 0; padding: 10px 20px; background-color: #87CEFA; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 16px; transition: background-color 0.3s;">
-    Do góry
+   <div style="text-align: center; margin: 20px 0;">
+    <button onclick="document.getElementById('przyciski-nawigacyjne').scrollIntoView({behavior: 'smooth'})" 
+            id="backToTopButton"
+            title="Przewiń do góry"
+            style="padding: 10px 20px; background-color: #87CEFA; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 16px; transition: background-color 0.3s;">
+        Do góry
     </button>
+</div>
     <script>
     // Optional: Add hover effect
     document.getElementById('backToTopButton').addEventListener('mouseover', function() {
