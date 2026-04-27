@@ -1,3 +1,5 @@
+
+
 async function displayVerse() {
     try {
         const selectElement_1 = document.getElementById('translation');
@@ -81,15 +83,6 @@ document.addEventListener('DOMContentLoaded', function() {
         button.addEventListener('click', displayVerse);
     }
 });
-
-
-
-
-
-
-
-
-
 
 
 
