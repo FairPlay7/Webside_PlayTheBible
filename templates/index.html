@@ -899,6 +899,44 @@ document.querySelectorAll('button[onclick*="window.location.href"]').forEach(fun
         <th>    /   </th>
         <th><a href="{{ url_for('schemat') }}#lista_ksiegi" style="color: #ffffff; text-decoration: none; font-weight: bold;">lista ksiąg</a></th>
     </tr>
+    <!-- Linki do podstron - nawigacja główna -->
+    <tr>
+        <td colspan="9" style="text-align: center; padding: 10px 0; color: #cccccc; font-size: 12px;">
+            <strong>Nawigacja:</strong> Użyj linków powyżej aby poruszać się po stronie głównej i podstronach z funkcjonalnościami biblijnymi.
+        </td>
+    </tr>
+    <!-- Obrazki społecznościowe -->
+    <tr>
+        <td colspan="9" style="text-align: center; padding: 20px 0;">
+            <a href="https://x.com/PlayTheBible_PL" target="_blank" style="margin: 0 15px; display: inline-block;">
+                <img src="{{ url_for('static', filename='ms/X.png') }}" 
+                     alt="X (Twitter)" 
+                     style="width: 40px; height: 40px; object-fit: contain; transition: transform 0.3s ease;"
+                     onmouseover="this.style.transform='scale(1.1)'"
+                     onmouseout="this.style.transform='scale(1)'">
+            </a>
+            <a href="https://www.tiktok.com/@playthebible.pl?is_from_webapp=1&sender_device=pc" target="_blank" style="margin: 0 15px; display: inline-block;">
+                <img src="{{ url_for('static', filename='ms/TikTok.png') }}" 
+                     alt="TikTok" 
+                     style="width: 40px; height: 40px; object-fit: contain; transition: transform 0.3s ease;"
+                     onmouseover="this.style.transform='scale(1.1)'"
+                     onmouseout="this.style.transform='scale(1)'">
+            </a>
+            <a href="https://youtube.com/@adm4website?si=TxBd38BZWiqW1tpg" target="_blank" rel="noopener noreferrer" style="margin: 0 15px; display: inline-block;">
+                <img src="{{ url_for('static', filename='ms/YT.png') }}" 
+                     alt="YouTube" 
+                     style="width: 40px; height: 40px; object-fit: contain; transition: transform 0.3s ease;"
+                     onmouseover="this.style.transform='scale(1.1)'"
+                     onmouseout="this.style.transform='scale(1)'">
+            </a>
+        </td>
+    </tr>
+    <!-- Informacje o społecznościowych -->
+    <tr>
+        <td colspan="9" style="text-align: center; padding: 10px 0; color: #cccccc; font-size: 12px;">
+            <strong>Społeczności:</strong> Dołącz do naszych profili społecznościowych aby być na bieżąco z nowościami i aktualizacjami Play The Bible.
+        </td>
+    </tr>
 </table>
 </div>
 
